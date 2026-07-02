@@ -189,12 +189,3 @@ Exception handling in tasks is also minimal right now. If a task throws, the sta
 
 ---
 
-## Interview talking points
-
-- The **producer-consumer** pattern and why busy-waiting is wrong vs `condition_variable::wait()`
-- What a **spurious wakeup** is and why the `while` predicate loop is mandatory
-- `lock_guard` vs `unique_lock` — why `condition_variable` needs the latter
-- Why `std::atomic<Status>` on `Task::status_` is sufficient without a mutex (single read/write, no compound operation)
-- The **AB/BA deadlock** the two-mutex design avoids
-- How DFS cycle detection here maps to the same algorithm in `make`, Bazel, Gradle
-- **Amdahl's Law**: why the DAG demo only achieves ~1.5x despite 4 threads
