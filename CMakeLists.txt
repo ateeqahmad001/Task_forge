@@ -19,7 +19,6 @@ find_package(Threads REQUIRED)
 # ── TaskForge static library ──────────────────────────────────────────────────
 # All .cpp files in src/ become one library that both demos link against.
 add_library(taskforge_lib STATIC
-    src/Logger.cpp
     src/Task.cpp
     src/ThreadPool.cpp
     src/TaskScheduler.cpp
