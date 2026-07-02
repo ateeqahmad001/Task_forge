@@ -1,2 +1,0 @@
-/usr/bin/ar qc libtaskforge_lib.a CMakeFiles/taskforge_lib.dir/src/Logger.cpp.o CMakeFiles/taskforge_lib.dir/src/Task.cpp.o CMakeFiles/taskforge_lib.dir/src/ThreadPool.cpp.o CMakeFiles/taskforge_lib.dir/src/TaskScheduler.cpp.o
-/usr/bin/ranlib libtaskforge_lib.a
