@@ -1,6 +1,6 @@
 # TaskForge
 
-A thread pool and DAG-based task scheduler I built from scratch in C++17 to get a solid handle on OS concurrency concepts — the kind that come up a lot in SWE internship interviews. No external libraries, just STL primitives.
+A thread pool and DAG-based task scheduler I built from scratch in C++17 to get a solid handle on OS concurrency concepts : the kind that come up a lot in SWE internship interviews. No external libraries, just STL primitives.
 
 ---
 
@@ -8,9 +8,9 @@ A thread pool and DAG-based task scheduler I built from scratch in C++17 to get 
 
 There are two layers:
 
-**ThreadPool** — a fixed set of worker threads that sleep on a condition variable until work arrives, grab the highest-priority task off a max-heap, run it, and go back to sleep. The priority queue upgrade was actually one of the more interesting parts: you can't just use `Task::operator<` directly because the queue stores `shared_ptr<Task>`, so comparing by pointer address is meaningless — needed a custom comparator that dereferences first.
+**ThreadPool** :- a fixed set of worker threads that sleep on a condition variable until work arrives, grab the highest-priority task off a max-heap, run it, and go back to sleep. The priority queue upgrade was actually one of the more interesting parts: you can't just use `Task::operator<` directly because the queue stores `shared_ptr<Task>`, so comparing by pointer address is meaningless — needed a custom comparator that dereferences first.
 
-**TaskScheduler** — wraps the thread pool with dependency tracking. You register tasks with the IDs of other tasks that must finish first. The scheduler builds a DAG internally, does cycle detection (DFS with WHITE/GRAY/BLACK coloring) before accepting any task, and then releases tasks to the pool automatically the moment all their dependencies complete. No polling — purely event-driven via a completion callback.
+**TaskScheduler** :- wraps the thread pool with dependency tracking. You register tasks with the IDs of other tasks that must finish first. The scheduler builds a DAG internally, does cycle detection (DFS with WHITE/GRAY/BLACK coloring) before accepting any task, and then releases tasks to the pool automatically the moment all their dependencies complete. No polling — purely event-driven via a completion callback.
 
 ---
 
@@ -112,7 +112,7 @@ Executables land in `build/`.
 
 ## Run
 
-### Demo 1 — Thread Pool
+### Demo 1 :- Thread Pool
 
 ```bash
 ./build/demo_basic_pool
@@ -133,7 +133,7 @@ Example output (abridged):
 [124ms][T-4864]  Speedup:          2.0x
 ```
 
-### Demo 2 — DAG Scheduler
+### Demo 2 :- DAG Scheduler
 
 ```bash
 ./build/demo_dag_scheduler
